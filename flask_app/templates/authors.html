@@ -9,29 +9,31 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css')}}">
 </head>
 <body>
-<div class="container flex">
-    <div>
+<div class="flex">
+    <div class="container bg-dark text-light m-5 p-5 block">
         <!-- Create New Author -->
         <h1>New Author</h1>
-            <form action="" method="post">
-            <div>
-                <label for="fname"></label>
-                <input type="text" name="first_name" id="">
+        <form action="" method="post">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">First Name</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="first_name">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Last Name</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="last_name">
             </div>
             <div>
-                <label for="lname"></label>
-                <input type="text" name="last_name" id="">
+                <button type="button" class="btn btn-primary">Primary</button>
             </div>
-            <div>
-                <button type="submit">Create</button>
-            </div>
-    </form>
-
+        </form>
     </div>
-    <div>
-        <!-- Dispaly all authors -->
-    </div>
+    <div class=" lego container block m-5 p-5 bg-dark text-light text-center">
+        <!-- All Authors -->
+        <h1>All Dojos</h1>
+        <div class= "block2" >
 
+        </div>
+    </div>
 </div>
 
 

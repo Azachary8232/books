@@ -2,3 +2,80 @@
     margin: 0px;
     padding: 0px;
 }
+
+}
+.container{
+    margin: auto;
+    width: 75%;
+}
+.lego{
+    border: 1px solid black;
+}
+.marginAuto{
+    margin: auto;
+}
+.marginTop{
+    margin-top: 25px;
+}
+.flex{
+display: flex;
+}
+.flex1{
+    flex: 1;
+}
+.flex2{
+    flex: 2;
+}
+.flex3{
+    flex: 3;
+}
+.flex4{
+    flex: 4;
+}
+.flex5{
+    flex: 5;
+}
+.flex{
+    flex: 6;
+}
+.spaceAround{
+    justify-content: space-around;
+}
+.spaceBetween{
+    justify-content: space-between;
+}
+.spaceEvenly{
+    justify-content: space-evenly;
+}
+.textAlign{
+    text-align: center;
+}
+.block{
+    display: block;
+}
+.inline{
+    display: inline;
+}
+.inlineBlock{
+    display: inline-block;
+}
+.btn{
+    border: 3px solid black;
+    background-color: blue;
+    color: white;
+    box-shadow: -3px -3px solid black;
+    height: 30px;
+    margin-top: 30px;
+    padding: 0px 10px 10px 10px;
+    display: block;
+}
+
+.block{
+    height: 450px;
+}
+
+.block2{
+    border: 3px solid white;
+    height: 300px;
+    width: 100%;
+}
