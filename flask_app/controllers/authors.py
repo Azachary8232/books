@@ -6,7 +6,7 @@ from flask_app.models.model_author import Author
 
 @app.route('/')
 def authors():
-    return render_template('books.html')
+    return render_template('book_info.html')
 
 @app.route('/create/(user/no())', methods=['POST'])
 def create_author():
