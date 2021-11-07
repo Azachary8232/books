@@ -13,14 +13,13 @@ def authors():
     authors = Author.get_all()
     return render_template("authors.html", authors=authors)
 
-# @app.route('/create/(user/no())', methods=['POST'])
-# def create_author():
-#     data = {
-#         # 'id' : id
-#         "(something/no())" : requestform['(somethong/no())']
-#     }
-#     Author.create(data)
-#     return redirect('author_info')
+@app.route('/author/create', methods=['POST'])
+def create_author():
+    print(request.form)
+    id = Author.create(request.form)
+    return redirect('/authors')
+
+
 
 # # Left Join
 # @app.route('/dojo/<int:id>')

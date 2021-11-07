@@ -11,11 +11,11 @@ class Author:
         self.updated_at = data['updated_at']
 
     # ***CREATE***
-    # @classmethod
-    # def create(cls,data):
-    #     query = "INSERT INTO (users/no()) (*something*, *something*) VALUES (%(*something*)s, %(*something*)s;"
-    #     author_id = connectToMySQL('(userS/no())').query_db(query,data)
-    #     return author_id
+    @classmethod
+    def create(cls,data):
+        query = "INSERT INTO authors (first_name, last_name) VALUES (%(first_name)s, %(last_name)s);"
+        author_id = connectToMySQL('books').query_db(query,data)
+        return author_id
 
     # # ***Retreive***
 
