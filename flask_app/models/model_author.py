@@ -7,7 +7,7 @@ class Author:
         self.id = data['id']
         self.first_name = data['first_name']
         self.last_name = data['last_name']
-        self.created_at = data['create_at']
+        self.created_at = data['created_at']
         self.updated_at = data['updated_at']
 
     # ***CREATE***
@@ -19,14 +19,14 @@ class Author:
 
     # # ***Retreive***
 
-    # @classmethod
-    # def get_all(cls):
-    #     query = "SELECT * FROM (users)/no());"
-    #     (userS/no()) = connectToMySQL('*userS*').query_db(query)
-    #     (userS/no()) = []
-    #     for user in (userS/no()):
-    #         (userS/no()).append(cls(user))
-    #     return (userS/no()) 
+    @classmethod
+    def get_all(cls):
+        query = "SELECT * FROM authors;"
+        results = connectToMySQL('books').query_db(query)
+        authors = []
+        for author in results:
+            authors.append(cls(author))
+        return authors 
 
 	# # (joining two groups)  
     # # add... from .model_(user/no()) import (User/no()) **to top of page 

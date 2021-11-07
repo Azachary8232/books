@@ -27,11 +27,13 @@
             </div>
         </form>
     </div>
-    <div class=" lego container block m-5 p-5 bg-dark text-light text-center">
+    <div class=" lego container block1 m-5 p-5 bg-dark text-light text-center">
         <!-- All Authors -->
         <h1>All Authors</h1>
         <div class= "block2" >
-
+            {% for author in authors %}
+            <a href="" class="block text-start">{{author.first_name }}{{author.last_name}}</a>
+            {% endfor %}
         </div>
         <a href="">Add Book</a>
     </div>

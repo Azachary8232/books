@@ -3,7 +3,7 @@
     padding: 0px;
 }
 
-}
+
 .container{
     margin: auto;
     width: 75%;
@@ -70,7 +70,7 @@ display: flex;
     display: block;
 }
 
-.block{
+.block1{
     height: 450px;
 }
 
