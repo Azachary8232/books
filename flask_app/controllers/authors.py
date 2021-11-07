@@ -2,20 +2,20 @@
 
 from flask import render_template, redirect, request, session, flash
 from flask_app import app
-from flask_app.models.(user/no()) import (User/no())
+from flask_app.models.model_author import Author
 
 @app.route('/')
-def users():
-    return render_template('index.html')
+def authors():
+    return render_template('authors.html')
 
 @app.route('/create/(user/no())', methods=['POST'])
-def create_(user/no())():
+def create_author():
     data = {
         # 'id' : id
         "(something/no())" : requestform['(somethong/no())']
     }
-    (User/no()).create(data)
-    return redirect('/*user*)')
+    Author.create(data)
+    return redirect('author_info')
 
 # Left Join
 @app.route('/dojo/<int:id>')
@@ -23,4 +23,4 @@ def dojo(id):
     data = {
     "id": id
     }
-    return render_template('dojo_info.html', dojo=Dojo.get_one_with_ninjas(data))   
+    return render_template('dojo_info.html', dojo=Author.get_one_with_ninjas(data))   
