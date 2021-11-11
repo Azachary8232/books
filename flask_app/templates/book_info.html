@@ -12,7 +12,7 @@
     <div class="flex">
         <div class=" lego container block m-5 p-5 bg-light text-center">
             <!-- Title-->
-            <h1>Title: ***Sample***</h1>
+            <h1>Title: {{book.title}} </h1>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -20,30 +20,32 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for author in book.authors %}
                     <tr>
-                        <td>Sample</td>
+                        <td>{{author.first_name}} {{author.last_name}}</td>
                     </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
         <div class="container bg-light m-5 p-5 block lego">
             <!-- Add Book -->
             <h1>Add Book's Favorite</h1>
-            <form action="" method="post">
-                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                    <option selected>Choose Author</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+            <form action="/add_book_fav" method="post">
+                <select name="author_id" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                {% for author in authors %}    
+                    <option value="{{author.id}}" selected>{{author.first_name}} {{ author.last_name }}</option>
+                {% endfor %}     
                 </select>
+                <input name="book_id" value="{{book.id}}" type="hidden">
                 <div>
-                    <button type="button" class="btn btn-primary">Add</button>
+                    <button type="submit" class="btn btn-primary">Add</button>
                 </div>
             </form>
         </div>
     </div>
     <div>
-        <a href="" class="p-5">Home</a>
+        <a href="/" class="p-5">Home</a>
     </div>
 
 

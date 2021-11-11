@@ -1,7 +1,7 @@
 # This is where classes go (class User, @classmethod)
 
 from flask_app.config.mysqlconnection import connectToMySQL
-from flask_app.models.model_book import Book
+from flask_app.models import model_book
 
 class Author:
     def __init__(self,data):
@@ -49,8 +49,10 @@ class Author:
                 'created_at': row['books.created_at'],
                 'updated_at': row['books.updated_at']
             }
-            author.books.append( Book(book_data) )
+            author.books.append( model_book.Book(book_data) )
         return author
+
+
 
 
     #    **** UPDATE****
