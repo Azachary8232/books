@@ -32,10 +32,10 @@
         <h1>All Authors</h1>
         <div class= "block2" >
             {% for author in authors %}
-            <a href="" class="block text-start">{{author.first_name }}{{author.last_name}}</a>
+            <a href="/author_info/{{author.id}}" class="block text-start">{{author.first_name }}{{author.last_name}}</a>
             {% endfor %}
         </div>
-        <a href="">Add Book</a>
+        <a href="/books">Add Book</a>
     </div>
 </div>
 
