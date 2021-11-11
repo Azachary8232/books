@@ -71,11 +71,12 @@ display: flex;
 }
 
 .block1{
-    height: 450px;
+    height: max-content;
 }
 
 .block2{
     border: 3px solid white;
-    height: 300px;
+    height: max-content;
     width: 400px;
+    padding: 15px;
 }

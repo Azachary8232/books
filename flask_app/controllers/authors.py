@@ -3,6 +3,7 @@
 from flask import render_template, redirect, request, session, flash
 from flask_app import app
 from flask_app.models.model_author import Author
+from flask_app.models.model_book import Book
 
 
 @app.route('/')
@@ -12,13 +13,20 @@ def authors():
 
 @app.route('/author/create', methods=['POST'])
 def create_author():
+    print(request.form)
     Author.create(request.form)
     return redirect('/')
 
 @app.route('/author_info/<int:id>')
 def authorInfo(id):
-    id_data = { 'id' : id }
-    author_data = Author.get_one_with_favorites_m2m(id_data)
-    return render_template('author_info.html', author_data)
+    data = { 'id' : id }
+    session['author_id'] = id
+    author = Author.get_one_with_books(data)
+    books = Book.get_all()
+    return render_template('author_info.html', author = author, books = books)
 
-
+@app.route('/add_favorite', methods = ['POST'])
+def add_favorite():
+    Author.create_favorite(request.form)
+    id = session['author_id']
+    return redirect(f'/author_info/{id}')

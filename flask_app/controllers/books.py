@@ -11,6 +11,5 @@ def books():
 
 @app.route('/create_book', methods = ['POST'])
 def create_book():
-    print('!!!')
     Book.create(request.form)
     return redirect('/books')

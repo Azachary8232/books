@@ -12,7 +12,7 @@
     <div class="flex">
         <div class=" lego container block m-5 p-5 bg-light text-center">
             <!-- Author's Favorite -->
-            <h1>Author's Favorites</h1>
+            <h1>{{author.first_name}} {{author.last_name}}'s Favorites</h1>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -21,31 +21,33 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for book in author.books %}
                     <tr>
-                        <td>Sample</td>
-                        <td>Sample</td>
+                        <td>{{ book.title}}</td>
+                        <td>{{book.num_of_pages}}</td>
                     </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
         <div class="container bg-light m-5 p-5 block lego">
             <!-- Add Author Favorite -->
             <h1>Add Author's Favorite</h1>
-            <form action="" method="post">
-                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                    <option selected>Choose Book</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+            <form action="/add_favorite" method="post">
+                <select name="book_id" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    {% for book in books %}
+                    <option value={{book.id}} selected>{{book.title}}</option>
+                    {% endfor %}
                 </select>
                 <div>
-                    <button type="button" class="btn btn-primary">Add</button>
+                    <button type="submit" class="btn btn-primary">Add</button>
                 </div>
+                <input name="author_id" type="hidden" value="{{author.id}}">
             </form>
         </div>
     </div>
     <div>
-        <a href="" class="p-5">Home</a>
+        <a href="/" class="p-5">Home</a>
     </div>
     <script src="/flask_app/static/js/script.js"></script>
 </body>
